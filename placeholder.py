@@ -2,9 +2,18 @@
 # placeholder
 # -------------------------------------------------------------------- #
 
-class Placeholder():
-    def hw():
-        print("Hello, first mixed project!")
+import cv2
 
-if __name__ == '__main__':
-    Placeholder.hw()
+vidcap = cv2.VideoCapture('./video/test.mp4')
+
+count = 0
+
+while(vidcap.isOpened()):
+    ret, image = vidcap.read()
+    image = cv2.resize(image, (960, 540))
+
+    if (int(vidcap.get(1)) % 30 == 0):
+        print('Saved frame number : ' + str(int(vidcap.get(1))))
+        cv2.imwrite('./stash/frame%d.png' % count, image)
+        count += 1
+        vidcap.release()
