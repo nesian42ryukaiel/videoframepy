@@ -1,5 +1,10 @@
 # -------------------------------------------------------------------- #
-# placeholder
+# main logic of part 1
+# assumed to be starting at home directory
+# activate venv by:
+#     % source ~/venv/firstvenv/bin/activate
+# link at:
+#     % python3 ~/repo/videoframepy/main.py
 # -------------------------------------------------------------------- #
 
 import cv2
