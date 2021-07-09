@@ -12,4 +12,4 @@ pip install -r requirements.txt
 
 ## License
 
-For terms please see the LICENSE*.TXT file at the root of this distribution.
+For terms please see the LICENSE file at the root of this distribution.
