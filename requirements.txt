@@ -7,3 +7,4 @@
 # requirements with version specifiers
 # -------------------------------------------------------------------- #
 opencv-python >= 4.5.2
+flask >= 2.0.1
