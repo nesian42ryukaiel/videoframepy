@@ -4,8 +4,8 @@
 # -------------------------------------------------------------------- #
 
 from flask import Flask, request, Response
-import jsonpickle
-import numpy as np
+import jsonpickle   # "a library for the two-way conversion of
+import numpy as np  #  complex Python objects and JSON        "
 import cv2
 # Initialize the Flask application
 app = Flask(__name__)

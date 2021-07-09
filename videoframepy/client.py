@@ -3,8 +3,8 @@
 # https://gist.github.com/edumucelli/c2843ed1f6e13ed4706d63be87a0d671
 # -------------------------------------------------------------------- #
 
-import requests
-import json
+import requests  # "a simple, yet elegant HTTP library"
+import json      # supported by Python
 import cv2
 
 addr = 'http://localhost:5000'
