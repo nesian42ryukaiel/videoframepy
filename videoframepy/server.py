@@ -19,6 +19,10 @@ def test():
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
+    cv2.imshow('test', img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
     # do some fancy processing here....
 
     # build a response dict to send back to client

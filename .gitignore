@@ -132,5 +132,7 @@ dmypy.json
 .DS_Store
 
 ### test material ###
+*.gif
+*.jpg
 *.mp4
 *.png
