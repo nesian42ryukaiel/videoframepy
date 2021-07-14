@@ -6,6 +6,8 @@
 from flask import Flask, request, Response
 import jsonpickle
 import numpy as np
+import videoframepy.frame as c_frame
+import videoframepy.buffer as c_buffer
 
 
 class Requester:

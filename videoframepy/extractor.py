@@ -4,7 +4,8 @@
 # -------------------------------------------------------------------- #
 
 import cv2
-import videoframepy.frame
+import videoframepy.frame as c_frame
+import videoframepy.buffer as c_buffer
 
 
 class Extractor:
@@ -14,11 +15,12 @@ class Extractor:
         self.fps = fps
 
     def extract(self, buffer):  # storage is in Buffer
-        while self.vid_cap.isOpened():
+        eligible = isinstance(buffer, c_buffer.Buffer)
+        while self.vid_cap.isOpened() and eligible:
             ret, image = self.vid_cap.read()
             if int(self.vid_cap.get(1)) % int(self.fps) == 0:
-                fr = videoframepy.frame.Frame(self.vid_cap.get(1), image)
-                buffer.append(fr)
+                fr = c_frame.Frame(self.vid_cap.get(1), image)
+                buffer.buffer.push(fr)
 
     def run(self, storage):
         self.extract(storage)
