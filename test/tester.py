@@ -10,16 +10,16 @@ class Tester:
     def __init__(self):
         self.tests = []
 
-    def addtest(self, test):
+    def add_test(self, test):
         self.tests.append(test)
 
-    def runall(self):
+    def run_all(self):
         for i in self.tests:
             i.run()
 
 
 if __name__ == '__main__':
     t = Tester()
-    t.addtest(temp)
-    t.runall()
+    t.add_test(temp)
+    t.run_all()
     print('tester working...')

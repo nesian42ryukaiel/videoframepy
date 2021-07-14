@@ -3,12 +3,12 @@
 # -------------------------------------------------------------------- #
 
 # import videoframepy
-import videoframepy.ping
+import docs.ping
 
 
 class Tester:
     def __init__(self):
-        self.p = videoframepy.ping.Ping()
+        self.p = docs.ping.Ping()
 
     def test(self):
         self.p.run()

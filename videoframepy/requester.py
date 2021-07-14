@@ -1,4 +1,5 @@
 # -------------------------------------------------------------------- #
+# requester.py
 # sends extracted frames from target video to server
 # -------------------------------------------------------------------- #
 
@@ -7,13 +8,14 @@ import jsonpickle
 import numpy as np
 
 
-class Sender:
-    def __init__(self, dest):
-        self.dest = dest
-        self.storage = []
+class Requester:
+    def __init__(self, dst):
+        self.destination = dst
 
-    def send(self):
-        pass
+    def send(self, buffer):
+        for i in buffer:
+            pass
+            # send item to destination (server link in this case)
 
     def run(self):
         self.send()
