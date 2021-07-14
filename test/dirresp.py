@@ -11,7 +11,8 @@ class Tester:
         self.p = videoframepy.ping.Ping()
 
     def test(self):
-        self.p.ping()
+        self.p.run()
+
 
 if __name__ == '__main__':
     t = Tester()

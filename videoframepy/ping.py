@@ -3,10 +3,11 @@
 # -------------------------------------------------------------------- #
 
 class Ping:
+
     def __init__(self):
         pass
 
-    def ping(self):
+    def run(self):
         print('connection: SUCCESS')
 
 
