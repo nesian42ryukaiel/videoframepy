@@ -20,7 +20,7 @@ class Extractor:
             ret, image = self.vid_cap.read()
             if int(self.vid_cap.get(1)) % int(self.fps) == 0:
                 fr = c_frame.Frame(self.vid_cap.get(1), image)
-                buffer.buffer.push(fr)
+                buffer.push(fr)
 
     def run(self, storage):
         self.extract(storage)
