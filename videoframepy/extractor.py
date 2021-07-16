@@ -16,8 +16,13 @@ class Extractor:
 
     def extract(self, buffer):  # storage is in Buffer
         eligible = isinstance(buffer, c_buffer.Buffer)
-        while self.vid_cap.isOpened() and eligible:
+        if not self.vid_cap.isOpened():
+            return
+        while eligible:
             ret, image = self.vid_cap.read()
+            if ret is False:
+                print('a1', self.vid_cap.get(1))
+                break
             if int(self.vid_cap.get(1)) % int(self.fps) == 0:
                 fr = c_frame.Frame(self.vid_cap.get(1), image)
                 buffer.push(fr)

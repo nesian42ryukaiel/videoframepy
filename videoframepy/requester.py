@@ -3,8 +3,8 @@
 # sends extracted frames from target video to server
 # -------------------------------------------------------------------- #
 
-from flask import Flask, request, Response
-import jsonpickle
+# from flask import Flask, request, Response
+# import jsonpickle
 import cv2
 import requests
 import videoframepy.frame as c_frame
@@ -25,10 +25,10 @@ class Requester:
             for i in buffer.buffer:
                 datacheck = isinstance(i, c_frame.Frame)
                 if datacheck:
-                    item = cv2.imread(i.path)
+                    item = i.image
                     # send item to destination (server link in this case)
                     _, item_encoded = cv2.imencode('.jpg',item)
-                    response = requests.post(test_url, data=item_encoded.to_string(), headers=headers)
+                    response = requests.post(test_url, data=item_encoded.tostring(), headers=headers)
                     print(response.text)
                 else:
                     print('frame invaild')

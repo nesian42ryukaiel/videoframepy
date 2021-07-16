@@ -4,9 +4,6 @@
 # -------------------------------------------------------------------- #
 
 class Frame:
-    def __init__(self, id, path):
-        self.id = id
-        self.path = path
-
-    def demo(self):
-        print(self.id, self.path)
+    def __init__(self, aidee, image):
+        self.id = aidee
+        self.image = image

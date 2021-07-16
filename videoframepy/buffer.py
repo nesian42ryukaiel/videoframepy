@@ -14,5 +14,5 @@ class Buffer:
         eligible = isinstance(frame, c_frame.Frame)
         if eligible:
             self.buffer.append(frame)
-            frame.demo()
+            # frame.demo()
 

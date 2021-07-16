@@ -7,11 +7,12 @@ from flask import Flask, request, Response
 import jsonpickle   # "a library for the two-way conversion of
 import numpy as np  #  complex Python objects and JSON        "
 import cv2
+import datetime
 # Initialize the Flask application
 app = Flask(__name__)
 
 # route http posts to this method
-@app.route('/api/test', methods=['POST'])
+@app.route('/test/output', methods=['POST'])
 def test():
     r = request
     # convert string of image data to uint8
@@ -19,7 +20,7 @@ def test():
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    cv2.imwrite('result.jpg', img)
+    cv2.imwrite('result_{}.jpg'.format(datetime.datetime.now().timestamp()), img)
 
     # cv2.imshow('test', img)
     # cv2.waitKey(0)

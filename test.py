@@ -15,5 +15,5 @@ class Test:
 
 
 if __name__ == '__main__':
-    t = Test('./input/test.mp4', 30, 'localhost:5000')
+    t = Test('./test/input/test.mp4', 30, 'http://192.168.0.13:5000')
     t.test()
