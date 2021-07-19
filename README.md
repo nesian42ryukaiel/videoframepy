@@ -5,22 +5,7 @@
 
 First Web + Python project.
 
-## Prerequisites
-
-### Native
-
-- macOS
-```
-brew install cmake
-brew install opencv
-brew install cpr
-
-mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
-
-
-```
+### Prerequisites
 
 ### Python
 
