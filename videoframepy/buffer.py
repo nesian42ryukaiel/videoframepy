@@ -10,6 +10,9 @@ class Buffer:
     def __init__(self):
         self.buffer = []
 
+    def length(self):
+        return len(self.buffer)
+        
     def push(self, frame):
         eligible = isinstance(frame, c_frame.Frame)
         if eligible:
