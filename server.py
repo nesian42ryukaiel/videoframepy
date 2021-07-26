@@ -12,7 +12,7 @@ import datetime
 app = Flask(__name__)
 
 # route http posts to this method
-@app.route('/test/output', methods=['POST'])
+@app.route('/temp_test_mat/output', methods=['POST'])
 def test():
     r = request
     # convert string of image data to uint8
@@ -23,7 +23,7 @@ def test():
 
     cv2.imwrite('result_{}.jpg'.format(datetime.datetime.now().timestamp()), img)
 
-    # cv2.imshow('test', img)
+    # cv2.imshow('temp_test_mat', img)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 

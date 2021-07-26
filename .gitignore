@@ -131,6 +131,9 @@ dmypy.json
 ### Mac OS ###
 .DS_Store
 
+### personal ###
+decommissioned
+
 ### test material ###
 *.gif
 *.jpg

@@ -19,7 +19,7 @@ class Requester:
         eligible = isinstance(buffer, c_buffer.Buffer)
         if eligible:
             addr = self.destination
-            test_url = addr + '/test/output'
+            test_url = addr + '/temp_test_mat/output'
             content_type = 'image/jpeg'
             headers = {'content-type': content_type}
             for i in buffer.buffer:
