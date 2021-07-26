@@ -132,7 +132,7 @@ dmypy.json
 .DS_Store
 
 ### personal ###
-decommissioned
+decommissioned/
 
 ### test material ###
 *.gif
