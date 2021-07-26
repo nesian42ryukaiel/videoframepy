@@ -19,6 +19,7 @@ def test():
     nparr = np.fromstring(r.data, np.uint8)
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    # either recognize object or calculate average color scheme here
 
     cv2.imwrite('result_{}.jpg'.format(datetime.datetime.now().timestamp()), img)
 
@@ -30,7 +31,7 @@ def test():
 
     # build a response dict to send back to client
     response = {'message': 'image received. size={}x{}'.format(img.shape[1], img.shape[0])
-                }
+                }  # add average color scheme or recognized object here
     # encode response using jsonpickle
     response_pickled = jsonpickle.encode(response)
 
