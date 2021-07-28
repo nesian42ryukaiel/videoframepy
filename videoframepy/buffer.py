@@ -18,4 +18,3 @@ class Buffer:
         if eligible:
             self.buffer.append(frame)
             # frame.demo()
-
