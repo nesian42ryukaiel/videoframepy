@@ -21,7 +21,7 @@ class Pipette:
 
 if __name__ == '__main__':
     p = Pipette('../garbage/lena.png')
-    r = Pipette('../garbage/result.jpg')
+    r = Pipette('../garbage/red.png')
     print(p.extract())
     print(int(p.extract()[0]))
     print(int(p.extract()[1]))
