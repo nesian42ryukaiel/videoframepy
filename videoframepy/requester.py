@@ -12,14 +12,16 @@ import videoframepy.buffer as c_buffer
 
 
 class Requester:
-    def __init__(self, dst):
+    def __init__(self, dst, dir):
         self.destination = dst
+        self.directory = dir
 
     def request(self, buffer):
         eligible = isinstance(buffer, c_buffer.Buffer)
         if eligible:
             addr = self.destination
-            test_url = addr + '/temp_test_mat/output'
+            drct = self.directory
+            test_url = addr + drct
             content_type = 'image/jpeg'
             headers = {'content-type': content_type}
             for i in buffer.buffer:

@@ -12,7 +12,8 @@ import numpy as np
 class Pipette(vr.Responder):
     def __init__(self, im):
         super(Pipette, self).__init__()
-        self.im = cv2.imread(im)
+        self.im = im    # requires result of imdecode;
+                        # OTOH the old code: self.im = cv2.imread(im)
         self.color = np.array(self.im).mean(axis=(0, 1))
         # print('initiated')
 
