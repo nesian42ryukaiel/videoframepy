@@ -24,9 +24,10 @@ def test():
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     # either recognize object or calculate average color scheme here
     pip = pipette.Pipette(img)
-    red = int(pip.run()[2])
-    grn = int(pip.run()[1])
-    blu = int(pip.run()[0])
+    bgr = pip.(run)
+    blu = int(bgr[0])
+    grn = int(bgr[1])
+    red = int(bgr[2])
 
     cv2.imwrite('./garbage/output/result_{}.jpg'.format(datetime.datetime.now().timestamp()), img)
 
