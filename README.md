@@ -19,6 +19,12 @@ pip install -r requirements.txt
 python3 -m unittest -v
 ```
 
+### How to run sample code from installed directory
+
+```
+python3 -m samples.{filename_without_.py_extension}
+```
+
 ## License
 
 For terms please see the LICENSE file at the root of this distribution.
