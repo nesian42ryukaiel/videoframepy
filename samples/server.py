@@ -24,7 +24,7 @@ def test():
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     # either recognize object or calculate average color scheme here
     pip = pipette.Pipette(img)
-    bgr = pip.(run)
+    bgr = pip.run()
     blu = int(bgr[0])
     grn = int(bgr[1])
     red = int(bgr[2])
