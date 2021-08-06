@@ -3,6 +3,7 @@
 # extracts frames from target video
 # -------------------------------------------------------------------- #
 
+import os
 import cv2
 import videoframepy.frame as c_frame
 import videoframepy.buffer as c_buffer
@@ -11,23 +12,37 @@ import videoframepy.buffer as c_buffer
 class Extractor:
 
     def __init__(self, resource, fps):
-        self.vid_cap = cv2.VideoCapture(resource)
+        name, extension = os.path.splitext(resource)
+        # print(name)
+        # print(extension)
+        self.mode = 0
+        if extension == ".mp4":
+            self.vid_cap = cv2.VideoCapture(resource)
+            self.mode = 1
+        elif extension == ".jpg":
+            self.img_cap = cv2.imread(resource)
+            self.mode = 2
         self.fps = fps
 
     def extract(self, buffer):  # storage is in Buffer
         eligible = isinstance(buffer, c_buffer.Buffer)
-        if not self.vid_cap.isOpened():
-            return
-        while eligible:
-            ret, image = self.vid_cap.read()
-            if ret is False:
-                print('a1', self.vid_cap.get(1))
-                break
-            if int(self.vid_cap.get(1)) % int(self.fps) == 0:
-                fr = c_frame.Frame(self.vid_cap.get(1), image)
-                buffer.push(fr)
+        if self.mode == 1:
+            if not self.vid_cap.isOpened():
+                return
+            while eligible:
+                ret, image = self.vid_cap.read()
+                if ret is False:
+                    print('a1', self.vid_cap.get(1))
+                    break
+                if int(self.vid_cap.get(1)) % int(self.fps) == 0:
+                    fr = c_frame.Frame(self.vid_cap.get(1), image)
+                    buffer.push(fr)
+        elif self.mode == 2:
+            fr = c_frame.Frame(0, self.img_cap)
+            buffer.push(fr)
 
     def run(self, storage):
+        print(self.mode)
         self.extract(storage)
 
 # -------------------------------------------------------------------- #
